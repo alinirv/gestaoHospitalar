@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../service/authService';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -15,7 +15,7 @@ const Login = () => {
     const user = authService.login(username, password);
 
     if (user) {
-      history.push(`/${user.role}`);
+      history(`/${user.role.toLowerCase()}`);
     } else {
       setError('Credenciais incorretas. Tente novamente.');
     }
@@ -49,7 +49,7 @@ const Login = () => {
         </div>
         {error && <p className="error-message">{error}</p>}
         <button type="submit" className="login-btn">Entrar</button>
-        <br/>
+        <br />
         <Link to="/" >Voltar</Link>
       </form>
       <footer className="home-footer">
