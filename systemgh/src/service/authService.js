@@ -8,7 +8,7 @@ const authService = {
       ];
       const user = users.find(u => u.username === username && u.password === password);
       if (user) {
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user.role));
       }
       return user;
     },
