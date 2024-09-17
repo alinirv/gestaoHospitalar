@@ -23,7 +23,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div >
+      <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
@@ -53,6 +54,7 @@ const Login = () => {
         <br />
         <Link to="/" >Voltar</Link>
       </form>
+      </div>
       <Footer />
     </div>
   );
