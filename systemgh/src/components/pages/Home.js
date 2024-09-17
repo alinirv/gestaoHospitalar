@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-
+import { Link } from 'react-router-dom';
+import Footer from '../pages/Footer';
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             <div className="home-content">
                 <h2>Acesse sua conta</h2>
                 <div className="login-options">
-                <Link to="/login" className="login-btn">Entrar</Link>
+                    <Link to="/login" className="login-btn">Entrar</Link>
                 </div>
                 <div className="user-info">
                     <p>Usuários Administradores podem gerenciar o sistema e visualizar logs de atividades.</p>
@@ -21,9 +21,7 @@ const Home = () => {
                     <p>Os Pacientes podem acompanhar suas consultas e resultados de exames.</p>
                 </div>
             </div>
-            <footer className="home-footer">
-                <p>&copy; 2024 Sistema de Gestão Hospitalar. Todos os direitos reservados.</p>
-            </footer>
+            <Footer />
         </div>
     );
 };
