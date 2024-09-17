@@ -1,19 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../pages/Heder';
+import Footer from '../pages/Footer';
+
 
 const Doctor = () => {
   return (
-    <div>
-      <h1>Painel do Médico</h1>
-      <p>Bem-vindo ao seu painel. Aqui você pode gerenciar suas consultas e exames.</p>
-      <ul>
-        <li>
-          <Link to="/consultas">Gerenciar Consultas</Link>
-        </li>
-        <li>
-          <Link to="/exames">Gerenciar Exames</Link>
-        </li>
-      </ul>
+    <div className="home-container">
+      <Header />
+      <div className="home-content">
+        <h1>Painel do Médico</h1>
+        <p>Bem-vindo ao seu painel. Aqui você pode gerenciar suas consultas e exames.</p>
+      </div>
+      <Footer />
     </div>
   );
 };
