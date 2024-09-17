@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../service/authService';
 import { Link } from 'react-router-dom';
+import Footer from '../pages/Footer';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -52,9 +53,7 @@ const Login = () => {
         <br />
         <Link to="/" >Voltar</Link>
       </form>
-      <footer className="home-footer">
-        <p>&copy; 2024 Sistema de Gestão Hospitalar. Todos os direitos reservados.</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
