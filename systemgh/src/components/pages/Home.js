@@ -5,9 +5,9 @@ import Footer from '../pages/Footer';
 const Home = () => {
     return (
         <div className="home-container">
-            <header className="home-header">
-                <h1>Bem-vindo ao Sistema de Gestão Hospitalar</h1>
-                <p>Aqui você pode gerenciar consultas, exames e muito mais.</p>
+            <header className="home1-header">
+                <h1>Bem-vindo ao GSH MediSys</h1>
+                <p>Tecnologia e gestão unidas pela saúde.</p>
             </header>
 
             <div className="home-content">

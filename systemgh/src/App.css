@@ -7,6 +7,15 @@
   background-color: #4CAF50;
   color: white;
   padding: 20px;
+  display: flex; /* Torna o header um contêiner flexível */
+  justify-content: space-between; /* Espaça os itens */
+  align-items: center; /* Alinha verticalmente os itens */
+}
+.home1-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 .home-content {
@@ -26,14 +35,32 @@
   font-size: 16px;
   line-height: 1.6;
 }
-
-.home-footer {
-  margin-top: 50px;
-  color: #777;
-  font-size: 14px;
-
+.system-name {
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
+.system-name h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.system-name p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #f1f1f1;
+}
+
+.home-footer {
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
 .login-container {
   width: 300px;
   margin: 100px auto;
@@ -86,3 +113,32 @@
   margin-top: 10px;
   font-size: 14px;
 }
+
+.nav-bar {
+  background-color: #4CAF50;
+  padding: 10px 20px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
