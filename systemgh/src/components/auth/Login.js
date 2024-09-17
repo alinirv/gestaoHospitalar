@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../service/authService';
 import { Link } from 'react-router-dom';
-import Footer from '../pages/Footer';
+import Footer from '../utils/Footer';
 
 const Login = () => {
   const [username, setUsername] = useState('');

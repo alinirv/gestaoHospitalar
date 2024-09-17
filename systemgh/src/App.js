@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
-import Login from './components/pages/Login';
+import Login from './components/auth/Login';
 import Doctor from './components/pages/Doctor';
 import Admin from './components/pages/Admin';
 import Patient from './components/pages/Patient';

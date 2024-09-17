@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../pages/Heder';
-import Footer from '../pages/Footer';
+import Header from '../utils/Heder';
+import Footer from '../utils/Footer';
 
 const Admin = () => {
 
