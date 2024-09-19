@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import authService from '../../service/authService';
 
@@ -29,16 +28,16 @@ const Header = () => {
                     {user.role === 'doctor' && (
                         <>
                         <li><Link to="/doctor">Home</Link></li>
-                            <li><Link to="/medico/pacientes">Meus Pacientes</Link></li>
-                            <li><Link to="/medico/consultas">Gerenciar Consultas</Link></li>
-                            <li><Link to="/medico/exames">Gerenciar Exames</Link></li>
+                            {/* <li><Link to="/medico/pacientes">Meus Pacientes</Link></li> */}
+                            <li><Link to="/appointments">Gerenciar Consultas</Link></li>
+                            <li><Link to="/tests">Gerenciar Exames</Link></li>
                         </>
                     )}
                     {user.role === 'patient' && (
                         <>
                         <li><Link to="/patient">Home</Link></li>
-                            <li><Link to="/paciente/consultas">Minhas Consultas</Link></li>
-                            <li><Link to="/paciente/exames">Meus Exames</Link></li>
+                            <li><Link to="/appointments">Agendar Consultas</Link></li>
+                            <li><Link to="/tests">Meus Exames</Link></li>
                         </>
                     )}
                     <li><a href="/login" className="logout-link" onClick={handleLogout}>Sair</a></li>
