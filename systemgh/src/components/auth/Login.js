@@ -8,7 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Login = () => {
     const user = authService.login(username, password);
 
     if (user) {
-      history(`/${user.role.toLowerCase()}`);
+      navigate(`/${user.role.toLowerCase()}`);
     } else {
       setError('Credenciais incorretas. Tente novamente.');
     }

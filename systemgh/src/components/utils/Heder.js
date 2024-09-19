@@ -4,7 +4,7 @@ import authService from '../../service/authService';
 
 const Header = () => {
     const navigate = useNavigate();
-    const role = authService.getCurrentUser();
+    const user = authService.getCurrentUser();
 
     const handleLogout = (e) => {
         e.preventDefault(); // Previne o comportamento padrão do link
@@ -19,14 +19,14 @@ const Header = () => {
             </div>
             <nav className="nav-bar">
                 <ul className="nav-list">
-                    {role === 'admin' && (
+                    {user.role === 'admin' && (
                         <>
                             <li><Link to="/admin">Home</Link></li>
                             <li><Link to="/admin/gerenciar">Gerenciar Sistema</Link></li>
                             <li><Link to="/admin/logs">Visualizar Logs</Link></li>
                         </>
                     )}
-                    {role === 'doctor' && (
+                    {user.role === 'doctor' && (
                         <>
                         <li><Link to="/doctor">Home</Link></li>
                             <li><Link to="/medico/pacientes">Meus Pacientes</Link></li>
@@ -34,7 +34,7 @@ const Header = () => {
                             <li><Link to="/medico/exames">Gerenciar Exames</Link></li>
                         </>
                     )}
-                    {role === 'patient' && (
+                    {user.role === 'patient' && (
                         <>
                         <li><Link to="/patient">Home</Link></li>
                             <li><Link to="/paciente/consultas">Minhas Consultas</Link></li>
