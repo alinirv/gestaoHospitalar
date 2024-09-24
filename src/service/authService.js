@@ -5,8 +5,10 @@ const authService = {
 
     const users = [
       { username: 'admin', password: '123', role: 'admin' },
-      { username: 'doctor', password: '123', role: 'doctor' },
-      { username: 'patient', password: '123', role: 'patient' },
+      { username: 'Everton', password: '123', role: 'doctor' },
+      { username: 'Daniel', password: '123', role: 'patient' },
+      { username: 'Aline', password: '123', role: 'patient' },
+      { username: 'Elise', password: '123', role: 'doctor' }
     ];
     const user = users.find(u => u.username === username && u.password === password);
 

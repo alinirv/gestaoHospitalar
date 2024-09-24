@@ -20,9 +20,7 @@ const Header = () => {
                 <ul className="nav-list">
                     {user.role === 'admin' && (
                         <>
-                            <li><Link to="/admin">Home</Link></li>
-                            <li><Link to="/admin/gerenciar">Gerenciar Sistema</Link></li>
-                            <li><Link to="/admin/logs">Visualizar Logs</Link></li>
+                            <li><Link to="/admin">Inicio</Link></li>
                         </>
                     )}
                     {user.role === 'doctor' && (

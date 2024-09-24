@@ -8,6 +8,7 @@ import Admin from './components/pages/Admin';
 import Patient from './components/pages/Patient';
 import MedicalTests from './components/pages/MedicalTests';
 import Appointments from './components/pages/Appointments';
+import AccessLogs from './components/logs/AccessLogs';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/patient" element={<Patient/>} />
         <Route path="/tests" element={<MedicalTests/>} />
         <Route path="/appointments" element={<Appointments/>} />
+        <Route path="/accesslogs" element={<AccessLogs/>} />
       </Routes>
     </Router>
   );

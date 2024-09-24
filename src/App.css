@@ -1,5 +1,3 @@
-
-
 .home-container {
   text-align: center;
   padding: 20px;
@@ -153,4 +151,95 @@ h2 {
   color: red;
   margin-top: 10px;
   font-size: 14px;
+}
+
+
+/* Estilos para a tabela de logs */
+.logs-table {
+  margin: 20px auto;
+  /* Centraliza a tabela horizontalmente */
+  width: 80%;
+  /* Define a largura da tabela */
+  border-collapse: collapse;
+  /* Remove espaçamento entre células */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logs-table th, .logs-table td {
+  padding: 12px 15px;
+  text-align: center;
+  /* Centraliza o texto */
+  border: 1px solid #ddd;
+  /* Adiciona borda às células */
+}
+
+.logs-table th {
+  background-color: #4CAF50;
+  color: white;
+  /* Define o fundo e a cor do texto dos cabeçalhos */
+}
+
+.logs-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+  /* Adiciona cor de fundo às linhas pares */
+}
+
+.logs-table tr:hover {
+  background-color: #f1f1f1;
+  /* Cor de fundo ao passar o mouse */
+}
+
+/* Botões de controle */
+.control-buttons {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.control-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.control-buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Filtros */
+.filters {
+  margin: 20px 0;
+  gap: 20px;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.filters button {
+  margin-left: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #45a049;
+}
+
+#filter-date {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.filters button:hover {
+  background-color: #45a049;
 }
