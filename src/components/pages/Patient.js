@@ -16,7 +16,7 @@ const Patient = () => {
       </div>
 
       <div className="admin-buttons">
-      <button className="login-btn" onClick={() => navigate('/AppointmentScheduling')}>Agendar Consultas</button>
+      <button className="login-btn" onClick={() => navigate('/appointmentScheduling')}>Agendar Consultas</button>
       </div>
 
       

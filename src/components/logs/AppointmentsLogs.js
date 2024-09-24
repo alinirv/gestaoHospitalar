@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../utils/Heder';
 import Footer from '../utils/Footer';
+import appointmentService from '../../service/AppointmentService';
 
 
 const AppointmentsLogs = () => {
@@ -8,7 +9,7 @@ const AppointmentsLogs = () => {
 
     useEffect(() => {
       // Carregar consultas ao montar o componente
-      setConsultations(consultationService.getConsultations());
+      setConsultations(appointmentService.getAppointments());
     }, []);
   
     return (
@@ -43,6 +44,7 @@ const AppointmentsLogs = () => {
         </div>
         <Footer />
       </div>
+    );
 };
 
 export default AppointmentsLogs;
