@@ -17,6 +17,7 @@ const Admin = () => {
         {/* Botões para acessar os logs */}
         <div className="admin-buttons">
           <button className="login-btn" onClick={() => navigate('/accesslogs')}>Visualizar Logs de Acesso</button>
+          <button className="login-btn" onClick={() => navigate('/appointmentslogs')}>Visualizar Logs de Consulta</button>
         </div>
       </div>
       <Footer />
@@ -25,4 +26,3 @@ const Admin = () => {
 };
 
 export default Admin;
-;

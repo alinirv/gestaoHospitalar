@@ -9,7 +9,6 @@ import Patient from './components/pages/Patient';
 import MedicalTests from './components/pages/MedicalTests';
 import Appointments from './components/Appointments/DoctorAppointments';
 import AccessLogs from './components/logs/AccessLogs';
-import PatientAppointments from './components/Appointments/PatientApponitments';
 
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
         <Route path="/tests" element={<MedicalTests/>} />
         <Route path="/appointments" element={<Appointments/>} />
         <Route path="/accesslogs" element={<AccessLogs/>} />
-        <Route path="/AppointmentScheduling" element={<PatientAppointments/>} />
       </Routes>
     </Router>
   );
