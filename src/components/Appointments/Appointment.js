@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import appointmentService from '../../service/AppointmentService';
-import Header from '../utils/Heder';
+import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 import authService from '../../service/authService'; // Supondo que a função vem desse serviço
 
-const PatientAppointments = () => {
+const Appointment = () => {
   const [appointments, setAppointments] = useState([]);
   const [newAppointment, setNewAppointment] = useState({
     id: '',
@@ -60,33 +60,53 @@ const PatientAppointments = () => {
       <Header />
       <div className="home-content">
         <h1>Gerenciamento de Consultas</h1>
-
+  
         {/* Formulário de Adição de Consultas */}
-        <div className="appointment-form">
-          <h3>Adicionar Nova Consulta</h3>
-          <input
-            type="text"
-            value={newAppointment.patientName}
-            disabled // O campo de nome do paciente é preenchido automaticamente e desabilitado
-          />
-          <input
-            type="text"
-            placeholder="Nome do Médico"
-            value={newAppointment.doctorName}
-            onChange={(e) => setNewAppointment({ ...newAppointment, doctorName: e.target.value })}
-          />
-          <input
-            type="datetime-local"
-            value={newAppointment.date}
-            onChange={(e) => setNewAppointment({ ...newAppointment, date: e.target.value })}
-          />
-          <button onClick={handleAddAppointment}>Adicionar Consulta</button>
+        <div className="login-container">
+          <h2>Adicionar Nova Consulta</h2>
+          <form onSubmit={handleAddAppointment}>
+            <div className="form-group">
+              <label for="patientName">Paciente</label>
+              <input
+                type="text"
+                id="patientName"
+                value={newAppointment.patientName}
+                disabled // O campo de nome do paciente é preenchido automaticamente e desabilitado
+                required
+              />
+            </div>
+  
+            <div className="form-group">
+              <label for="doctorName">Nome do Médico</label>
+              <input
+                type="text"
+                id="doctorName"
+                value={newAppointment.doctorName}
+                onChange={(e) => setNewAppointment({ ...newAppointment, doctorName: e.target.value })}
+                required
+              />
+            </div>
+  
+            <div className="form-group">
+              <label for="appointmentDate">Data e Hora</label>
+              <input
+                type="datetime-local"
+                id="appointmentDate"
+                value={newAppointment.date}
+                onChange={(e) => setNewAppointment({ ...newAppointment, date: e.target.value })}
+                required
+              />
+            </div>
+  
+            <button type="submit" className="login-btn">Adicionar Consulta</button>
+          </form>
         </div>
       </div>
       <Footer />
     </div>
   );
+  
 };
 
-export default PatientAppointments;
+export default Appointment;
 

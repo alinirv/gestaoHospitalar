@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../utils/Heder';
+import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 import appointmentService from '../../service/AppointmentService';
 

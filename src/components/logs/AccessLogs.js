@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fileService from '../../service/fileService';
-import Header from '../utils/Heder';
+import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 
 const Logs = () => {

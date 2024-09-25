@@ -6,11 +6,11 @@ import Login from './components/auth/Login';
 import Doctor from './components/pages/Doctor';
 import Admin from './components/pages/Admin';
 import Patient from './components/pages/Patient';
-import MedicalTests from './components/pages/MedicalTests';
-import Appointments from './components/Appointments/DoctorAppointments';
 import AccessLogs from './components/logs/AccessLogs';
-import PatientAppointments from './components/Appointments/PatientApponitments';
+import Appointment from './components/Appointments/Appointment';
 import AppointmentsLogs from './components/logs/AppointmentsLogs';
+import Exam from './components/exams/exam';
+import ExamsLogs from './components/logs/ExamsLogs';
 
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
         <Route path="/admin" element={<Admin/>} />
         <Route path="/doctor" element={<Doctor/>} />
         <Route path="/patient" element={<Patient/>} />
-        <Route path="/tests" element={<MedicalTests/>} />
-        <Route path="/appointments" element={<Appointments/>} />
+        <Route path="/exams" element={<Exam/>} />
         <Route path="/accesslogs" element={<AccessLogs/>} />
-        <Route path="/appointmentScheduling" element={<PatientAppointments/>} />
+        <Route path="/appointmentScheduling" element={<Appointment/>} />
         <Route path="/appointmentLogs" element={<AppointmentsLogs/>} />
+        <Route path="/examsLogs" element={<ExamsLogs/>} />
       </Routes>
     </Router>
   );

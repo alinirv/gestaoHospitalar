@@ -27,13 +27,14 @@ const Header = () => {
                         <>
                         <li><Link to="/doctor">Home</Link></li>
                             {/* <li><Link to="/medico/pacientes">Meus Pacientes</Link></li> */}
-                            <li><Link to="/appointments">Gerenciar Consultas</Link></li>
-                            <li><Link to="/tests">Gerenciar Exames</Link></li>
+                            <li><Link to="/appointmentLogs">Gerenciar Consultas</Link></li>
+                            <li><Link to="/exams">Solicitar Exames</Link></li>
                         </>
                     )}
                     {user.role === 'patient' && (
                         <>
                         <li><Link to="/patient">Inicio</Link></li>
+                        <li><Link to="/examsLogs">Visualizar Exames Solicitados</Link></li>
                         </>
                     )}
                     <li><a href="/login" className="logout-link" onClick={handleLogout}>Sair</a></li>
