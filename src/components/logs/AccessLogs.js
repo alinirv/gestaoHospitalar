@@ -90,7 +90,8 @@ const Logs = () => {
         <table className="logs-table">
           <thead>
             <tr>
-              <th>Data/Hora</th>
+              <th>Data</th>
+              <th>Hora</th>
               <th>Tipo de Usuário</th>
               <th>Usuário</th>
               <th>Ação</th>
@@ -100,6 +101,7 @@ const Logs = () => {
             {filteredLogs.map((log, index) => (
               <tr key={index}>
                 <td>{log.date}</td>
+                <td>{log.hora}</td>
                 <td>{log.userType}</td>
                 <td>{log.username}</td>
                 <td>{log.action}</td>

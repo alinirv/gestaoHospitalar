@@ -19,8 +19,8 @@ const fileService = {
     getAccessLogs(fileName){
         const logs = localStorage.getItem(fileName) || '';
         return logs.trim().split('\n').map(log => {
-            const [date, userType, username, action] = log.match(/\[(.*?)\] - (.*?) - (.*?) - (.*?)$/).slice(1);
-            return { date, userType, username, action };
+            const [date, hora, userType, username, action] = log.match(/\[(.*?), (.*?)\] - (.*?) - (.*?) - (.*?)$/).slice(1);
+            return { date, hora, userType, username, action };
         });
     },
 
