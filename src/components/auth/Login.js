@@ -24,6 +24,10 @@ const Login = () => {
 
   return (
     <div >
+      <header className="home1-header">
+          <h1>GSH MediSys</h1>
+          <p>Tecnologia e gestão unidas pela saúde.</p>
+      </header>
       <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className="login-form">

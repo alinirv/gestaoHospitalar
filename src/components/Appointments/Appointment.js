@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import appointmentService from '../../service/AppointmentService';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
-import authService from '../../service/authService'; // Supondo que a função vem desse serviço
+import authService from '../../service/authService';
 
 const Appointment = () => {
   const [appointments, setAppointments] = useState([]);
@@ -40,7 +40,7 @@ const Appointment = () => {
       // Limpa o formulário, exceto o nome do paciente (usuário logado)
       setNewAppointment({
         id: '',
-        patientName: loggedUser.name, // Mantém o nome do paciente
+        patientName: loggedUser.username, // Mantém o nome do paciente
         doctorName: '',
         date: '',
         status: 'Agendada',

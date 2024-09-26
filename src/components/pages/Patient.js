@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 import { useNavigate } from 'react-router-dom';
-import examService from '../../service/ExamService'; // Serviço para obter os exames
+import examService from '../../service/ExamService';
+import authService from '../../service/authService';
+
 
 const Patient = () => {
   const [exams, setExams] = useState([]); // Estado para armazenar exames
@@ -25,28 +27,29 @@ const Patient = () => {
     navigate('/examsLogs');
   };
 
+  const loggedUser = authService.getCurrentUser();
+
   return (
     <div className="home-container">
       <Header />
       <div className="home-content">
         <h1>Painel do Paciente</h1>
+        <h2>Bem-vindo(a) {loggedUser.username}!</h2>
         <p><h3>Bem-vindo ao seu painel. Aqui você pode agendar suas consultas e acompanhar seus exames.</h3></p>
 
         {/* Exibir notificação personalizada se houver exames */}
         {showNotification && (
           <div className="error-message">
-            <h1>Você tem {exams.length} exame(s) agendado(s).</h1>
+            <h2>Você tem {exams.length} exame(s) agendado(s).</h2>
             <button 
               className="login-btn"
               onClick={handleCheckExams}>Verificar</button>
           </div>
         )}
       </div><br></br>
-
       <div className="admin-buttons">
         <button className="login-btn" onClick={() => navigate('/appointmentScheduling')}>Agendar Consultas</button>
       </div>
-
       <Footer />
     </div>
   );
