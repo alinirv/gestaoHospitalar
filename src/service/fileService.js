@@ -15,12 +15,22 @@ const fileService = {
         const blob = new Blob([logs], { type: 'text/plain;charset=utf-8' });
         saveAs(blob, fileName);
     },
-    // Processa os logs e retornar um array de objetos
+    // Processa os logs de acesso e retornar um array de objetos
     getAccessLogs(fileName){
         const logs = localStorage.getItem(fileName) || '';
         return logs.trim().split('\n').map(log => {
             const [date, userType, username, action] = log.match(/\[(.*?)\] - (.*?) - (.*?) - (.*?)$/).slice(1);
             return { date, userType, username, action };
+        });
+    },
+
+    getAppointmentsLogs(fileName){
+        const logs = localStorage.getItem(fileName) || '';
+        console.log('##########'+logs);
+        return logs.trim().split('\n').map(log => {
+            const [date,hora, userType, action] = log.match(/\[(.*?), (.*?)\] - (.*?) - (.*?)$/
+).slice(1);
+            return { date,hora, userType, action };
         });
     }
 

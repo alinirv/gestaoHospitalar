@@ -1,4 +1,9 @@
+import fileService  from './fileService';
+import authService from './authService';
+
 const appointmentService = {
+
+
     // Obtém todas as consultas do localStorage
     getAppointments: () => {
       const appointments = localStorage.getItem('appointments');
@@ -10,6 +15,12 @@ const appointmentService = {
       const appointments = appointmentService.getAppointments();
       appointments.push(appointment);
       localStorage.setItem('appointments', JSON.stringify(appointments));
+
+      //gera log de agendamento
+      const timestamp = new Date().toLocaleString();
+      const loggedUser = authService.getCurrentUser();
+      const log = `[${timestamp}] - ${loggedUser.role} - AGENDAMENTO`;
+      fileService.appendToFile(log, 'logs_appointments.txt');
     },
   
     // Remove uma consulta pelo ID
@@ -17,6 +28,11 @@ const appointmentService = {
       let appointments = appointmentService.getAppointments();
       appointments = appointments.filter((appointment) => appointment.id !== id);
       localStorage.setItem('appointments', JSON.stringify(appointments));
+      //gera log de agendamento
+      const timestamp = new Date().toLocaleString();
+      const loggedUser = authService.getCurrentUser();
+      const log = `[${timestamp}] - ${loggedUser.role} - CANCELAMENTO`;
+      fileService.appendToFile(log, 'logs_appointments.txt');
     },
   
     // Atualiza uma consulta pelo ID

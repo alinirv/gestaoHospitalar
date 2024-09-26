@@ -7,7 +7,8 @@ const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [filteredLogs, setFilteredLogs] = useState([]);
   const [filterDate, setFilterDate] = useState('');
-  const [filterAction, setFilterAction] = useState(''); 
+  const [filterAction, setFilterAction] = useState('');
+
   useEffect(() => {
     const loadedLogs = fileService.getAccessLogs('logs_acessos.txt');
     setLogs(loadedLogs);
@@ -16,11 +17,12 @@ const Logs = () => {
 
   // Formata a data do log para o formato YYYY-MM-DD
   const formatLogDate = (logDate) => {
-    const [datePart] = logDate.split(','); 
-    const [day, month, year] = datePart.split('/'); 
-    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`; 
+    const [datePart] = logDate.split(',');
+    const [day, month, year] = datePart.split('/');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
   };
 
+  //filtro por data
   const handleFilterByDate = () => {
     if (filterDate) {
       const filtered = logs.filter(log => {
@@ -33,6 +35,7 @@ const Logs = () => {
     }
   };
 
+  //filtro por ação
   const handleFilterByAction = () => {
     if (filterAction) {
       const filtered = logs.filter(log => log.action === filterAction);
@@ -44,12 +47,6 @@ const Logs = () => {
 
   const handleSaveLogs = () => {
     fileService.saveFile('logs_acessos.txt');
-  };
-
-  const handleResetFilters = () => {
-    setFilteredLogs(logs);
-    setFilterDate('');
-    setFilterAction(''); 
   };
 
   return (
@@ -76,7 +73,7 @@ const Logs = () => {
               name="action"
               id="filter-date"
               value={filterAction}
-              onChange={(e) => setFilterAction(e.target.value)} 
+              onChange={(e) => setFilterAction(e.target.value)}
             >
               <option value="">Todos</option>
               <option value="LOGIN">Login</option>
