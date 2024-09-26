@@ -7,8 +7,7 @@ const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [filteredLogs, setFilteredLogs] = useState([]);
   const [filterDate, setFilterDate] = useState('');
-  const [filterAction, setFilterAction] = useState('');
-
+  const [filterAction, setFilterAction] = useState(''); 
   useEffect(() => {
     const loadedLogs = fileService.getAccessLogs('logs_acessos.txt');
     setLogs(loadedLogs);
@@ -34,9 +33,9 @@ const Logs = () => {
     }
   };
 
-  const handleFilterByAction = (action) => {
-    if (action) {
-      const filtered = logs.filter(log => log.action === action);
+  const handleFilterByAction = () => {
+    if (filterAction) {
+      const filtered = logs.filter(log => log.action === filterAction);
       setFilteredLogs(filtered);
     } else {
       setFilteredLogs(logs);
@@ -50,7 +49,7 @@ const Logs = () => {
   const handleResetFilters = () => {
     setFilteredLogs(logs);
     setFilterDate('');
-    setFilterAction('');
+    setFilterAction(''); 
   };
 
   return (
@@ -72,10 +71,18 @@ const Logs = () => {
           </div>
 
           <div>
-            <label>Filtrar por Ação:</label>
-            <button onClick={() => handleFilterByAction('LOGIN')}>Login</button>
-            <button onClick={() => handleFilterByAction('LOGOUT')}>Logout</button>
-            <button onClick={() => handleFilterByAction('')}>Todos</button>
+            <label htmlFor="action">Filtrar por Ação:</label>
+            <select
+              name="action"
+              id="filter-date"
+              value={filterAction}
+              onChange={(e) => setFilterAction(e.target.value)} 
+            >
+              <option value="">Todos</option>
+              <option value="LOGIN">Login</option>
+              <option value="LOGOUT">Logout</option>
+            </select>
+            <button onClick={handleFilterByAction}>Filtrar</button>
           </div>
         </div>
 
@@ -108,5 +115,6 @@ const Logs = () => {
     </div>
   );
 };
+
 
 export default Logs;
