@@ -16,8 +16,9 @@ const Admin = () => {
 
         {/* Botões para acessar os logs */}
         <div className="admin-buttons">
-          <button className="login-btn" onClick={() => navigate('/accesslogs')}>Visualizar Logs de Acesso</button>
-          <button className="login-btn" onClick={() => navigate('/appointmentLogs')}>Visualizar Logs de Consulta</button>
+          <button className="login-btn" onClick={() => navigate('/accesslogs')}>Logs de Acessos</button>
+          <button className="login-btn" onClick={() => navigate('/appointmentLogs')}>Logs de Consultas</button>
+          <button className="login-btn" onClick={() => navigate('/appointmentLogs')}>Logs de Exames</button>
         </div>
       </div>
       <Footer />

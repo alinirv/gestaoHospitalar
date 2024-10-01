@@ -8,11 +8,8 @@
   color: white;
   padding: 20px;
   display: flex;
-  /* Torna o header um contêiner flexível */
   justify-content: space-between;
-  /* Espaça os itens */
   align-items: center;
-  /* Alinha verticalmente os itens */
 }
 
 .home1-header {
@@ -32,6 +29,12 @@
 
 .login-btn:hover {
   background-color: #45a049;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content:center;
+  gap: 30px; 
 }
 
 .user-info {
@@ -153,40 +156,31 @@ h2 {
   font-size: 14px;
 }
 
-
-/* Estilos para a tabela de logs */
+/* tabela de logs */
 .logs-table {
   margin: 20px auto;
-  /* Centraliza a tabela horizontalmente */
   width: 80%;
-  /* Define a largura da tabela */
   border-collapse: collapse;
-  /* Remove espaçamento entre células */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .logs-table th, .logs-table td {
   padding: 12px 15px;
   text-align: center;
-  /* Centraliza o texto */
   border: 1px solid #ddd;
-  /* Adiciona borda às células */
 }
 
 .logs-table th {
   background-color: #4CAF50;
   color: white;
-  /* Define o fundo e a cor do texto dos cabeçalhos */
 }
 
 .logs-table tr:nth-child(even) {
   background-color: #f9f9f9;
-  /* Adiciona cor de fundo às linhas pares */
 }
 
 .logs-table tr:hover {
   background-color: #f1f1f1;
-  /* Cor de fundo ao passar o mouse */
 }
 
 /* Botões de controle */

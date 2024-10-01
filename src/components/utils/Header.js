@@ -34,8 +34,7 @@ const Header = () => {
                     {user.role === 'patient' && (
                         <>
                         <li><Link to="/patient">Inicio</Link></li>
-                        <li><Link to="/examsLogs">Exames Solicitados</Link></li>
-                        <li><Link to="/appointmentScheduling">Agendar Consultas</Link></li>
+                        <li><Link to="/examsLogs">Visualizar Exames Solicitados</Link></li>
                         </>
                     )}
                     <li><a href="/login" className="logout-link" onClick={handleLogout}>Sair</a></li>
