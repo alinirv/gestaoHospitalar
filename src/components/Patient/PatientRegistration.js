@@ -4,7 +4,7 @@ import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 import patientService from '../../service/PatientRegisterService';
 
-const PEXELS_API_KEY = '1QjiNOOICC72len6gb0bzIiyEcMFo90jSkQq9fgcVIcJ1q5hrC9LZdpc';
+const kay = env.PEXELS_API_KEY
 
 const PatientRegistration = () => {
     const [patientData, setPatientData] = useState({
