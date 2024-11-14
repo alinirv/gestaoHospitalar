@@ -11,6 +11,7 @@ import Appointment from './components/Appointments/Appointment';
 import AppointmentsLogs from './components/logs/AppointmentsLogs';
 import Exam from './components/exams/exam';
 import ExamsLogs from './components/logs/ExamsLogs';
+import PatientRegistration from './components/Patient/PatientRegistration';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/appointmentScheduling" element={<Appointment/>} />
         <Route path="/appointmentLogs" element={<AppointmentsLogs/>} />
         <Route path="/examsLogs" element={<ExamsLogs/>} />
+        <Route path='/PatientRegistration' element={<PatientRegistration/>}/>
       </Routes>
     </Router>
   );
