@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
+import patientService from '../../service/PatientRegisterService';
 
 const PEXELS_API_KEY = '1QjiNOOICC72len6gb0bzIiyEcMFo90jSkQq9fgcVIcJ1q5hrC9LZdpc';
 
 const PatientRegistration = () => {
     const [patientData, setPatientData] = useState({
+        id: '',
         name: '',
         email: '',
         cep: '',
@@ -18,7 +20,6 @@ const PatientRegistration = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name);
         setPatientData({ ...patientData, [name]: value });
     };
 
@@ -71,8 +72,22 @@ const PatientRegistration = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Dados do paciente:', patientData);
+        // Gera um ID único para o paciente
+        const newId = Date.now().toString();
+        const patientToAdd = { ...patientData, id: newId };
+        patientService.addPatient(patientToAdd);
         alert('Paciente cadastrado com sucesso!');
+        // Limpa o formulário
+        setPatientData({
+            id: '',
+            name: '',
+            email: '',
+            cep: '',
+            address: '',
+            city: '',
+            state: '',
+            photo: '',
+        });
     };
 
     return (
@@ -83,36 +98,15 @@ const PatientRegistration = () => {
                 <form onSubmit={handleSubmit} className='form-group'>
                     <div className="form-group">
                         <label htmlFor="name">Nome:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={patientData.name}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="text" name="name" placeholder="Nome" value={patientData.name} onChange={handleChange} required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={patientData.email}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="email" name="email" placeholder="Email" value={patientData.email} onChange={handleChange} required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="cep">CEP:</label>
-                        <input
-                            type="text"
-                            id="cep"
-                            name="cep"
-                            value={patientData.cep}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="text" name="cep" placeholder="CEP" value={patientData.cep} onChange={handleChange} required />
                         
                     </div>
 
