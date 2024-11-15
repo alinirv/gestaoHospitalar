@@ -16,7 +16,7 @@ const fileService = {
         saveAs(blob, fileName);
     },
     // Processa os logs de acesso e retornar um array de objetos
-    getAccessLogs(fileName){
+    getAccessLogs(fileName) {
         const logs = localStorage.getItem(fileName) || '';
         return logs.trim().split('\n').map(log => {
             const [date, hora, userType, username, action] = log.match(/\[(.*?), (.*?)\] - (.*?) - (.*?) - (.*?)$/).slice(1);
@@ -24,13 +24,12 @@ const fileService = {
         });
     },
 
-    getAppointmentsLogs(fileName){
+    getAppointmentsLogs(fileName) {
         const logs = localStorage.getItem(fileName) || '';
-        console.log('##########'+logs);
         return logs.trim().split('\n').map(log => {
-            const [date,hora, userType, action] = log.match(/\[(.*?), (.*?)\] - (.*?) - (.*?)$/
-).slice(1);
-            return { date,hora, userType, action };
+            const [date, hora, userType, action] = log.match(/\[(.*?), (.*?)\] - (.*?) - (.*?)$/
+            ).slice(1);
+            return { date, hora, userType, action };
         });
     }
 

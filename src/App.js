@@ -11,7 +11,7 @@ import Appointment from './components/Appointments/Appointment';
 import AppointmentsLogs from './components/logs/AppointmentsLogs';
 import Exam from './components/exams/exam';
 import ExamsLogs from './components/logs/ExamsLogs';
-import PatientRegistration from './components/Patient/PatientRegistration';
+import PatientRegistration from './components/register/PatientRegistration';
 
 
 function App() {
