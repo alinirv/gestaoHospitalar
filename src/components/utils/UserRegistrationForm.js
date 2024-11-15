@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
@@ -133,6 +134,7 @@ const UserRegistrationForm = ({ apiKey, onSubmit, userType }) => {
                     </div>
 
                 </form>
+                <Link to="/admin">Voltar</Link>
             </div>
             <Footer />
         </div>

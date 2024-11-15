@@ -1,12 +1,11 @@
 .registration-container {
   width: 600px;
-  margin: 100px auto;
+  margin: 30px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
 .form-group {
@@ -26,31 +25,35 @@
 }
 
 .form-group-btn {
-  display: inline-block; /* Faz o botão se comportar como um bloco */
-  margin-bottom: 10px; /* Adiciona um espaço abaixo do botão */
-  padding: 10px 15px; /* Ajusta o preenchimento para o botão */
-  background-color: #4CAF50; /* Cor de fundo verde */
-  color: white; /* Cor do texto do botão */
-  border: none; /* Remove a borda padrão */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
-  text-align: center; /* Garante que o texto fique centrado */
-  font-size: 16px; /* Tamanho de fonte */
-  transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+  display: inline-block; 
+  margin-bottom: 10px; 
+  padding: 10px 15px; 
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  text-align: center; 
+  font-size: 16px; 
+  transition: background-color 0.3s; 
 }
 
 .form-group-btn:hover {
-  background-color: #45a049; /* Cor do botão ao passar o mouse */
+  background-color: #45a049;
 }
 
 .submit-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  margin-right: auto;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px 20px;       
+  background-color: #4CAF50;  
+  color: white;              
+  border: none;           
+  border-radius: 5px;       
+  cursor: pointer; 
+}
+
+a {
+  text-decoration: none; 
+  color: #45a049; 
 }
 
 .submit-btn:hover {
@@ -101,7 +104,6 @@
 .admin-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
 }
 
@@ -113,7 +115,6 @@
 
 .system-name {
   text-align: left;
-  /* Alinha o texto à esquerda */
 }
 
 .system-name h1 {
