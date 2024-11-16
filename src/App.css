@@ -1,3 +1,33 @@
+.patient-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
+  padding: 20px;
+}
+
+.patient-card {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: justify; 
+  max-width: 600px; 
+}
+
+.patient-photo {
+  width: 200px; 
+  height: 200px; 
+ text-align: center;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/*************************************/
+
 .registration-container {
   width: 600px;
   margin: 30px auto;
@@ -69,8 +99,9 @@ a {
 
 .home-container {
   text-align: center;
+  margin: 100px auto;
   padding: 20px;
-  width: au;
+  width: auto;
 }
 
 .home-header {

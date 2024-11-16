@@ -4,12 +4,12 @@ import userService from './UserService';
 const patientService = {
     // Função para obter todos os pacientes
     getPatients: () => {
-        return userService.getUsers('patients');
+        return userService.getUsers('patient');
     },
 
     // Função para adicionar um novo paciente
     addPatient: (patient) => {
-        userService.addUser(patient, 'patients');
+        userService.addUser(patient);
     },
 
     // Função para remover um paciente
@@ -17,9 +17,14 @@ const patientService = {
         userService.removeUser(id, 'patients');
     },
 
+    // Função para buscar por id
+    getPatientById: (id) => {
+        return userService.getUserById(id);
+    },
+
     // Função para atualizar um paciente
     updatePatient: (updatedPatient) => {
-        userService.updateUser(updatedPatient, 'patients');
+        return userService.updateUser(updatedPatient, 'patients');
     }
 };
 

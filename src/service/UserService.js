@@ -1,64 +1,66 @@
-// src/service/PatientService.js
 import fileService from './fileService';
 import authService from './authService';
 
-const logService = {
-    // Função para gerar logs genéricos
-    logAction: (action, userType) => {
-        const timestamp = new Date().toLocaleString();
-        const loggedUser = authService.getCurrentUser();
-
-        const log = `[${timestamp}] - ${loggedUser.role} - ${loggedUser.username} - ${action} - ${userType}`;
-        const logFileName = `logs_${userType.toLowerCase()}.txt`;
-
-        // Salva o log no arquivo correto
-        fileService.appendToFile(log, logFileName);
-    }
-};
-
 const userService = {
+    // Função para obter todos os usuários por tipo
+    getUsers: (role) => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const filteredUsers = users.filter(user => {
+            const trimmedRole = user.role.trim(); // Limpeza de espaços
+            return trimmedRole === role;
+        });
 
-    
-   
-    // Função para obter usuários de um tipo específico (pacientes, médicos, etc.)
-    getUsers: (userType) => {
-        const users = localStorage.getItem('cadastro_'+userType);
-        return users ? JSON.parse(users) : [];
+        console.log("Usuários filtrados:", filteredUsers);
+
+        return filteredUsers;
+    },
+
+    // Função para obter um usuário pelo ID
+    getUserById: (id) => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        return users.find((user) => user.id === id);
     },
 
     // Função para adicionar um novo usuário
-    addUser: (user, userType) => {
-        const users = userService.getUsers(userType);
+    addUser: (user) => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
         users.push(user);
-        localStorage.setItem('cadastro_'+userType, JSON.stringify(users));
+        localStorage.setItem('users', JSON.stringify(users));
 
-        // Gera o log de cadastro
-        logService.logAction('CADASTRO', userType);
+        // Registro de log
+        logAction('CADASTRO', user);
     },
 
-    // Função para remover um usuário pelo ID
-    removeUser: (id, userType) => {
-        let users = userService.getUsers(userType);
-        users = users.filter((user) => user.id !== id);
-        localStorage.setItem(userType, JSON.stringify(users));
-
-        // Gera o log de remoção
-        logService.logAction('REMOÇÃO', userType);
-    },
-
-    // Função para atualizar um usuário
-    updateUser: (updatedUser, userType) => {
-        const users = userService.getUsers(userType);
+    // Função para atualizar um usuário existente
+    updateUser: (updatedUser) => {
+        let users = JSON.parse(localStorage.getItem('users')) || [];
         const index = users.findIndex((user) => user.id === updatedUser.id);
         if (index !== -1) {
             users[index] = updatedUser;
-            localStorage.setItem(userType, JSON.stringify(users));
+            localStorage.setItem('users', JSON.stringify(users));
 
-            // Gera o log de atualização
-            logService.logAction('ATUALIZAÇÃO', userType);
+            // Registro de log
+            logAction('EDIÇÃO', updatedUser);
         }
-    }
+    },
 
+    // Função para remover um usuário pelo ID
+    removeUser: (id, role) => {
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        users = users.filter((user) => user.id !== id);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        // Registro de log
+        logAction('DELETE', role);
+    },
+};
+
+// Função para registrar logs de todas as ações
+const logAction = (action, user) => {
+    const timestamp = new Date().toLocaleString();
+    const loggedUser = authService.getCurrentUser();
+    const log = `[${timestamp}] - ${loggedUser.role} - ${loggedUser.username} - ${action} - ID: ${user.id}, Tipo: ${user.role}`;
+    fileService.appendToFile(log, 'logs_usuarios.txt');
 };
 
 export default userService;

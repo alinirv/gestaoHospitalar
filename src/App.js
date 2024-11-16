@@ -11,7 +11,10 @@ import Appointment from './components/Appointments/Appointment';
 import AppointmentsLogs from './components/logs/AppointmentsLogs';
 import Exam from './components/exams/exam';
 import ExamsLogs from './components/logs/ExamsLogs';
-import PatientRegistration from './components/register/PatientRegistration';
+import EditPatient from './components/patient/EditPatient';
+import PatientRegistration from './components/patient/PatientRegistration';
+import PatientsList from './components/patient/ListPatient';
+import PatientView from './components/patient/PatientView';
 
 
 function App() {
@@ -28,7 +31,10 @@ function App() {
         <Route path="/appointmentScheduling" element={<Appointment/>} />
         <Route path="/appointmentLogs" element={<AppointmentsLogs/>} />
         <Route path="/examsLogs" element={<ExamsLogs/>} />
-        <Route path='/PatientRegistration' element={<PatientRegistration/>}/>
+        <Route path='/patientRegistration' element={<PatientRegistration/>}/>
+        <Route path="/listPatient" element={<PatientsList/>} />
+        <Route path="/editPatient/:id" element={<EditPatient />} />
+        <Route path="/patientsView/:id" element={<PatientView />} />
       </Routes>
     </Router>
   );

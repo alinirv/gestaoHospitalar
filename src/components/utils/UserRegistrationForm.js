@@ -6,7 +6,7 @@ import Footer from '../utils/Footer';
 
 
 
-const UserRegistrationForm = ({ apiKey, onSubmit, userType }) => {
+const UserRegistrationForm = ({ onSubmit, userType }) => {
     const key = process.env.PEXELS_API_KEY;
     const initialFormData = {
         id: '',
@@ -17,14 +17,15 @@ const UserRegistrationForm = ({ apiKey, onSubmit, userType }) => {
         city: '',
         state: '',
         photo: '',
+        role: 'patient'
     };
     const [userData, setUserData] = useState(initialFormData);
-
+    // Atualiza mudança no estado
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
     };
-
+    // busca cep e completa endereço
     const handleCepSearch = async () => {
         const cep = userData.cep.replace(/\D/g, '');
         if (cep.length === 8) {
@@ -53,8 +54,7 @@ const UserRegistrationForm = ({ apiKey, onSubmit, userType }) => {
         }
 
     };
-
-
+    //busca imagem
     async function handleFetchPhoto() {
         try {
             const response = await axios.get('https://api.pexels.com/v1/search?query=musician&per_page=12', {
@@ -76,7 +76,6 @@ const UserRegistrationForm = ({ apiKey, onSubmit, userType }) => {
             alert('Erro ao buscar imagem. Tente novamente mais tarde.');
         }
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const newId = Date.now().toString();
