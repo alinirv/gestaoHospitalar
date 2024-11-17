@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import patientService from '../../service/PatientService';
+import doctorService from '../../service/DoctorService';
 import axios from 'axios';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 
-const EditPatient = () => {
+const EditDoctor = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [formData, setFormData] = useState();
 
-     // Carregar pacientes ao montar o componente
+     // Carregar médicos ao montar o componente
      useEffect(() => {
-        const fetchPatient = async () => {
+        const fetchDoctor = async () => {
             try {
-                const foundPatient = patientService.getPatientById(id); 
-                setFormData(foundPatient);
+                const foundDoctor = doctorService.getDoctorById(id); 
+                setFormData(foundDcoctor);
             } catch (error) {
-                console.error("Erro ao buscar paciente:", error);
-                alert('Erro ao carregar paciente.');
+                console.error("Erro ao buscar médico:", error);
+                alert('Erro ao carregar médico.');
             }
         };
-        fetchPatient();
+        fetchDoctor();
     }, [id]);
 
     const handleChange = (e) => {
@@ -31,8 +31,8 @@ const EditPatient = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        patientService.updatePatient(formData);
-        alert('Dados do paciente atualizados com sucesso!');
+        patientService.updateDoctor(formData);
+        alert('Dados do médico atualizados com sucesso!');
     };
 
      // busca cep e completa endereço
@@ -73,7 +73,7 @@ const EditPatient = () => {
         <div className="home-container">
             <Header />
             <div className="registration-container">
-                <h2>Editar Paciente</h2>
+                <h2>Editar Médico</h2>
                 <form onSubmit={handleSubmit} className="form-group">
 
                     <div className="form-group">
@@ -109,4 +109,4 @@ const EditPatient = () => {
     );
 };
 
-export default EditPatient;
+export default EditDoctor;
