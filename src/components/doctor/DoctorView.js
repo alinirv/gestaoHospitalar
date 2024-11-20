@@ -62,7 +62,7 @@ const DoctorView = () => {
                     </div>
                     
                 </div>
-                <Link to="/listPatient">Voltar</Link>
+                <Link to="/listDoctor">Voltar</Link>
             </div>
             <Footer />
         </div>

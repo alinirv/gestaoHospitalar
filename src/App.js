@@ -15,6 +15,10 @@ import EditPatient from './components/patient/EditPatient';
 import PatientRegistration from './components/patient/PatientRegistration';
 import PatientsList from './components/patient/ListPatient';
 import PatientView from './components/patient/PatientView';
+import EditDoctor from './components/doctor/EditDoctor';
+import DoctorRegistration from './components/doctor/DoctorRegistration';
+import DoctorsList from './components/doctor/ListDoctor';
+import DoctorView from './components/doctor/DoctorView';
 
 
 function App() {
@@ -35,6 +39,10 @@ function App() {
         <Route path="/listPatient" element={<PatientsList/>} />
         <Route path="/editPatient/:id" element={<EditPatient />} />
         <Route path="/patientsView/:id" element={<PatientView />} />
+        <Route path='/doctorRegistration' element={<DoctorRegistration/>}/>
+        <Route path="/listDoctor" element={<DoctorsList/>} />
+        <Route path="/editDoctor" element={<EditDoctor />} />
+        <Route path="/doctorsView/:id" element={<DoctorView />} />
       </Routes>
     </Router>
   );

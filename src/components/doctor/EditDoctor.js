@@ -15,7 +15,7 @@ const EditDoctor = () => {
         const fetchDoctor = async () => {
             try {
                 const foundDoctor = doctorService.getDoctorById(id); 
-                setFormData(foundDcoctor);
+                setFormData(foundDoctor);
             } catch (error) {
                 console.error("Erro ao buscar médico:", error);
                 alert('Erro ao carregar médico.');
@@ -31,7 +31,7 @@ const EditDoctor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        patientService.updateDoctor(formData);
+        doctorService.updateDoctor(formData);
         alert('Dados do médico atualizados com sucesso!');
     };
 
@@ -102,7 +102,7 @@ const EditDoctor = () => {
                         <button type="button" className="submit-btn" onClick={() => navigate('/listPatient')}>Cancelar</button>
                     </div>
                 </form>
-                <Link to="/listPatient">Voltar</Link>
+                <Link to="/listDoctor">Voltar</Link>
             </div>
             <Footer />
         </div>
