@@ -59,7 +59,8 @@ const UserRegistrationForm = ({ onSubmit, userType }) => {
         try {
             const response = await axios.get('https://api.pexels.com/v1/search?query=musician&per_page=12', {
                 headers: {
-                    Authorization: key,
+                    Authorization: key
+                    
                 },
             });
 
