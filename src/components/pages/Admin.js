@@ -39,7 +39,7 @@ const Admin = () => {
           </div>
         </div>
         <div className="registration-container">
-          <h3>Gerenciamento de Médicos: </h3>
+          <h3>Gerenciamento de Administradores: </h3>
           {/* Botões para gerenciar Médicos */}
           <div className="admin-buttons">
             <button className="login-btn" onClick={() => navigate('/AdminRegistration')}>Cadastro de Administradores</button>

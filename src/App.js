@@ -44,11 +44,11 @@ function App() {
         <Route path="/patientsView/:id" element={<PatientView />} />
         <Route path='/doctorRegistration' element={<DoctorRegistration/>}/>
         <Route path="/listDoctor" element={<DoctorsList/>} />
-        <Route path="/editDoctor" element={<EditDoctor />} />
+        <Route path="/editDoctor/:id" element={<EditDoctor />} />
         <Route path="/doctorsView/:id" element={<DoctorView />} />
         <Route path='/adminRegistration' element={<AdminRegistration/>}/>
         <Route path="/listAdmin" element={<AdminsList/>} />
-        <Route path="/editAdmin" element={<EditAdmin />} />
+        <Route path="/editAdmin/:id" element={<EditAdmin />} />
         <Route path="/adminsView/:id" element={<AdminView />} />
       </Routes>
     </Router>
