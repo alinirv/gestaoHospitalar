@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import PatientService from '../../service/UserService';
+import AdminService from '../../service/UserService';
 import Header from '../utils/Header';
 import Footer from '../utils/Footer';
 
-const PatientsList = () => {
-    const [patients, setPatients] = useState([]);
+const AdminsList = () => {
+    const [admins, setAdmins] = useState([]);
     const navigate = useNavigate();
 
-    // Carregar pacientes ao montar o componente
+    // Carregar Administrador ao montar o componente
     useEffect(() => {
-        const loadedPatients = PatientService.getUsers('patient');
-        setPatients(loadedPatients);
+        const loadedAdmins = AdminService.getUsers('admin');
+        setAdmins(loadedAdmins);
     }, []);
     
     return (
         <div className="home-container">
             <Header />
             <div className="home-content">
-                <h2>Lista de Pacientes</h2>
-                {patients.length === 0 ? (
-                    <><p>Nenhum paciente cadastrado.</p><p><Link to="/admin">Voltar</Link> </p></>
+                <h2>Lista de Adminstradores</h2>
+                {admins.length === 0 ? (
+                    <><p>Nenhum administrador cadastrado.</p><p><Link to="/admin">Voltar</Link> </p></>
                     
                 ) : (
                     <table className="logs-table">
@@ -33,15 +33,15 @@ const PatientsList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {patients.map((patient) => (
-                                <tr key={patient.id}>
-                                    <td>{patient.id}</td>
-                                    <td>{patient.name}</td>
-                                    <td>{patient.email}</td>
+                            {admins.map((admin) => (
+                                <tr key={admin.id}>
+                                    <td>{admin.id}</td>
+                                    <td>{admin.name}</td>
+                                    <td>{admin.email}</td>
                             
                                     <td>
                                         <div className="admin-buttons">
-                                            <button className="submit-btn" onClick={() => navigate(`/patientsView/${patient.id}`)}>Visualizar</button>
+                                            <button className="submit-btn" onClick={() => navigate(`/adminsView/${admin.id}`)}>Visualizar</button>
                                            
                                         </div>
                                     </td>
@@ -56,4 +56,4 @@ const PatientsList = () => {
     );
 };
 
-export default PatientsList;
+export default AdminsList;

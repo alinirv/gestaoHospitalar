@@ -19,7 +19,10 @@ import EditDoctor from './components/doctor/EditDoctor';
 import DoctorRegistration from './components/doctor/DoctorRegistration';
 import DoctorsList from './components/doctor/ListDoctor';
 import DoctorView from './components/doctor/DoctorView';
-
+import AdminRegistration from './components/admin/AdminRegistration';
+import AdminsList from './components/admin/ListAdmin';
+import AdminView from './components/admin/AdminView';
+import EditAdmin from  './components/admin/EditAdmin';
 
 function App() {
   return (
@@ -43,6 +46,10 @@ function App() {
         <Route path="/listDoctor" element={<DoctorsList/>} />
         <Route path="/editDoctor" element={<EditDoctor />} />
         <Route path="/doctorsView/:id" element={<DoctorView />} />
+        <Route path='/adminRegistration' element={<AdminRegistration/>}/>
+        <Route path="/listAdmin" element={<AdminsList/>} />
+        <Route path="/editAdmin" element={<EditAdmin />} />
+        <Route path="/adminsView/:id" element={<AdminView />} />
       </Routes>
     </Router>
   );

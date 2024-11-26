@@ -38,6 +38,14 @@ const Admin = () => {
             <button className="login-btn" onClick={() => navigate('/listDoctor')}>Listar Médicos</button>
           </div>
         </div>
+        <div className="registration-container">
+          <h3>Gerenciamento de Médicos: </h3>
+          {/* Botões para gerenciar Médicos */}
+          <div className="admin-buttons">
+            <button className="login-btn" onClick={() => navigate('/AdminRegistration')}>Cadastro de Administradores</button>
+            <button className="login-btn" onClick={() => navigate('/listAdmin')}>Listar Administradores</button>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
