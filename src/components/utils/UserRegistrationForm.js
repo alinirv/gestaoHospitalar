@@ -8,6 +8,20 @@ import Footer from '../utils/Footer';
 
 const UserRegistrationForm = ({ onSubmit, userType }) => {
     const key = process.env.PEXELS_API_KEY;
+    // Mapear userType para role
+    const getRoleFromUserType = (userType) => {
+        console.log(userType)
+        switch (userType) {
+            case 'Paciente':
+                return 'patient';
+            case 'Médico':
+                return 'doctor';
+            case 'Admin':
+                return 'admin';
+            default:
+                return '';
+        }
+    };
     const initialFormData = {
         id: '',
         name: '',
@@ -17,7 +31,7 @@ const UserRegistrationForm = ({ onSubmit, userType }) => {
         city: '',
         state: '',
         photo: '',
-        role: 'patient'
+        role: getRoleFromUserType(userType)
     };
     const [userData, setUserData] = useState(initialFormData);
     // Atualiza mudança no estado
@@ -60,7 +74,7 @@ const UserRegistrationForm = ({ onSubmit, userType }) => {
             const response = await axios.get('https://api.pexels.com/v1/search?query=musician&per_page=12', {
                 headers: {
                     Authorization: key
-                    
+
                 },
             });
 
